@@ -42,7 +42,7 @@ easy_install "PyRAML[yaml,raml]"
 
 ## Changelog
 
-### 0.1.3
+### 0.1.4
 
 #### Features
 

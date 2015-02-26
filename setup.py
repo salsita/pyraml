@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from raml import __version__, __doc__
+from lib import __version__, __doc__
 
 options = dict(
     minver = '2.6',     # Min Python version required.
@@ -33,6 +33,9 @@ properties = dict(
     packages = [
         'raml',
         ],
+    package_dir = {
+        'raml': 'lib',
+        },
     namespace_packages = [
         ],
     include_package_data = False,
