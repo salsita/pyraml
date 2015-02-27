@@ -42,6 +42,12 @@ easy_install "PyRAML[yaml,raml]"
 
 ## Changelog
 
+### 0.1.5
+
+#### Fixes
+
+- Fix package setup to not require dependencies preinstalled.
+
 ### 0.1.4
 
 #### Features
