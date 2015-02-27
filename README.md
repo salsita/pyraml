@@ -42,6 +42,12 @@ easy_install "PyRAML[yaml,raml]"
 
 ## Changelog
 
+### 0.1.6
+
+#### Features
+
+- Add default option to ignore empty parameters unless '' is specified in enum.
+
 ### 0.1.5
 
 #### Fixes

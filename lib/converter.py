@@ -33,16 +33,20 @@ class Converter(object):
         )
 
     log = None
+    ignore_empty_params = True
 
     def convert_params(self, specification, params):
         converted = {}
         for name, spec in specification.items():
-            try:
-                value = params[name]
-            except KeyError:
+            value = params.get(name, None)
+
+            if value is None or value == '' and self.ignore_empty_params and '' not in spec.get('enum', ()):
                 if spec.get('required', False):
-                    raise ParameterError(name, 'missing required parameter: {name!r}')
+                    raise ParameterError(name, '{missing} required parameter: {name!r}',
+                        missing = 'misssing' if value is None else 'empty')
+
                 value = spec.get('default', None)
+
                 if value is None:
                     converted[name] = None
                     continue
