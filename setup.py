@@ -16,7 +16,7 @@ properties = dict(
     name = 'PyRAML',
     version = __version__,
     url = 'https://github.com/salsita/pyraml',
-    download_url = 'https://github.com/salsita/pyraml/tarball/v{}'.format( __version__),
+    download_url = 'https://github.com/salsita/pyraml/tarball/v{0}'.format( __version__),
     description = __doc__.strip().split('\n', 1)[0].strip('.'),
         # First non-empty line of module doc
     long_description = (__doc__.strip() + '\n').split('\n', 1)[1].strip(),

@@ -71,30 +71,30 @@ class Converter(object):
 
         if typename == 'string' and isinstance(value, basestring):
             if 'enum' in spec and value not in spec['enum']:
-                raise ValueError('not one of {!r}: {!r}'.format(spec['enum'], value))
+                raise ValueError('not one of {0!r}: {1!r}'.format(spec['enum'], value))
 
             if 'pattern' in spec:
                 pattern = spec['pattern']
                 if isinstance(pattern, basestring):
                     pattern = spec['pattern'] = re.compile(pattern)
                 if not pattern.search(value):
-                    raise ValueError('does not match regexp {!r}: {!r}'.format(pattern.pattern, value))
+                    raise ValueError('does not match regexp {0!r}: {1!r}'.format(pattern.pattern, value))
 
             if 'minLength' in spec and len(value) < spec['minLength']:
-                raise ValueError('too short: {} < {!r}'.format(len(value), spec['minLength']))
+                raise ValueError('too short: {0} < {1!r}'.format(len(value), spec['minLength']))
 
             if 'maxLength' in spec and len(value) > spec['maxLength']:
-                raise ValueError('too long: {} > {!r}'.format(len(value), spec['maxLength']))
+                raise ValueError('too long: {0} > {1!r}'.format(len(value), spec['maxLength']))
 
         elif typename in ('integer', 'number'):
             if 'minimum' in spec and value < spec['minimum']:
-                raise ValueError('too small: {!r} < {!r}'.format(value, spec['minimum']))
+                raise ValueError('too small: {0!r} < {1!r}'.format(value, spec['minimum']))
 
             if 'maximum' in spec and value > spec['maximum']:
-                raise ValueError('too large: {!r} > {!r}'.format(value, spec['maximum']))
+                raise ValueError('too large: {0!r} > {1!r}'.format(value, spec['maximum']))
 
         return value
 
     def __str__(self):
-        return '{}.{}({})'.format(self.__class__.__module__, self.__class__.__name__.lower(),
+        return '{0}.{1}({2})'.format(self.__class__.__module__, self.__class__.__name__.lower(),
             ', '.join(k.replace('converters_', '') for k in dir(self) if k.startswith('converters_')))

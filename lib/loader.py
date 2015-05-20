@@ -21,7 +21,7 @@ class Loader(dataloader.Loader):
             params = spec.get('baseUriParameters', None)
 
         spec['allUriParameters'] = params = dict(
-            (key, param) for key, param in params.items() if '{{{}}}'.format(key) in uri) if params else {}
+            (key, param) for key, param in params.items() if '{{{0}}}'.format(key) in uri) if params else {}
         spec['uri'] = spec['relativeUri'] = uri
 
         for resource in spec['resources']:
