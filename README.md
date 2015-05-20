@@ -42,6 +42,12 @@ easy_install "PyRAML[yaml,raml]"
 
 ## Changelog
 
+### 0.1.7
+
+#### Fixes
+
+- Fix RAML loader to not fail on method-less resources, or empty responses and bodies.
+
 ### 0.1.6
 
 #### Features
