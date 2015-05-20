@@ -40,15 +40,22 @@ class Loader(dataloader.Loader):
         resource['methodsByName'] = methods_by_name = {}
 
         if self.log:
-            self.log.debug('add %s %s %s', spec['id'], '/'.join(m['method'].upper() for m in resource['methods']) or '-', uri)
+            self.log.debug('add %s %s %s', spec['id'], '/'.join(m['method'].upper() for m in resource.get('methods', [])) or '-', uri)
 
         for method in resource.setdefault('methods', []):
             methods_by_name[method['method']] = method
             method['uri'] = uri
             method['allUriParameters'] = resource['allUriParameters']
             for status, response in method.setdefault('responses', {}).items():
+                if not response:
+                    method['responses'][status] = response = {}
+
                 response['status'] = int(status)
+
                 for mimetype, body in response.setdefault('body', {}).items():
+                    if not body:
+                        response['body'][mimetype] = body = {}
+
                     body['mimetype'] = mimetype
 
         for sub_resource in resource.get('resources', ()):
