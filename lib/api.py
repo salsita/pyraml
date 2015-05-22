@@ -17,7 +17,7 @@ class Content(object):
     def __str__(self):
         return self.content
     def __repr__(self):
-        return 'content({}, {})'.format(self.mimetype, len(self.content))
+        return 'content({0}, {1})'.format(self.mimetype, len(self.content))
 
 class API(object):
     """Flask API.
@@ -57,7 +57,7 @@ class API(object):
         if uri is None:
             uri = self.spec['uri']
         if not uri.startswith('/'):
-            raise ValueError('base uri needs to start with slash: {}'.format(uri))
+            raise ValueError('base uri needs to start with slash: {0}'.format(uri))
 
         self.uri = uri
         self.id = id or self.spec['id']
@@ -68,7 +68,7 @@ class API(object):
 
         if not uri.startswith(self.uri):
             if not uri.startswith('/'):
-                raise ValueError('resource uri needs to start with slash: {}'.format(uri))
+                raise ValueError('resource uri needs to start with slash: {0}'.format(uri))
             uri = self.uri + uri
 
         return self.api[uri]
@@ -87,11 +87,11 @@ class API(object):
 
             for method in methods:
                 if method.lower() not in resource['methodsByName']:
-                    raise ValueError('unknown resource method: {} {}'.format(method, resource['uri']))
+                    raise ValueError('unknown resource method: {0} {1}'.format(method, resource['uri']))
 
             return methods
 
-        raise ValueError('requires a {}list/string of methods, or None, not {} {!r}'.format(
+        raise ValueError('requires a {0}list/string of methods, or None, not {1} {2!r}'.format(
             '' if allow_empty else 'non-empty ', type(methods), methods))
 
     def get_method_spec(self, resource, method=None):
@@ -192,8 +192,8 @@ class API(object):
             for k in dir(self) if k not in exclude and not k.startswith('_') and not callable(getattr(self, k)))
 
     def __str__(self):
-        return '{}.{}({}: {}: {} resources)'.format(self.__class__.__module__, self.__class__.__name__.lower(),
+        return '{0}.{1}({2}: {3}: {4} resources)'.format(self.__class__.__module__, self.__class__.__name__.lower(),
             self.id, self.uri, len(self.api))
 
     def __repr__(self):
-        return '{}{}'.format(self, ''.join('\n  {} = {}'.format(k, v) for k, v in self.config.items()))
+        return '{0}{1}'.format(self, ''.join('\n  {0} = {1}'.format(k, v) for k, v in self.config.items()))
