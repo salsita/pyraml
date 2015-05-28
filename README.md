@@ -42,6 +42,12 @@ easy_install "PyRAML[yaml,raml]"
 
 ## Changelog
 
+### 0.1.8
+
+#### Fixes
+
+- Fix Python 2.6 support.
+
 ### 0.1.7
 
 #### Fixes
