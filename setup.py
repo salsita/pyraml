@@ -43,7 +43,7 @@ properties = dict(
         ],
     include_package_data = False,
     install_requires = [
-        'PyDataLoader>=0.1.1',
+        'PyDataLoader>=0.1.2',
         ],
     extras_require = {
         'raml': [
