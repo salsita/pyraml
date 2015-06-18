@@ -49,7 +49,7 @@ class API(object):
                 plugin.log = self.log
 
         if options:
-            self.__dict__update(options)
+            self.__dict__.update(options)
 
         self.spec = self.loader(path)
         self.api = self.spec['api']
