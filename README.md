@@ -42,6 +42,18 @@ easy_install "PyRAML[yaml,raml]"
 
 ## Changelog
 
+### 0.2.0
+
+#### Features
+
+- Add AuthError exception.
+
+#### Fixes
+
+- Fix API options issues.
+- Update dependencies to support Python 3.
+- Fix package setup on Python 3.
+
 ### 0.1.9
 
 #### Fixes
