@@ -43,11 +43,11 @@ properties = dict(
         ],
     include_package_data = False,
     install_requires = [
-        'PyDataLoader>=0.1.2',
+        'PyDataLoader>=0.1.3',
         ],
     extras_require = {
         'raml': [
-            'pyraml-parser>=0.0.5',
+            'pyraml-parser>=0.1.5',
             ],
         'yaml': [
             'PyYAML>=3.11',
