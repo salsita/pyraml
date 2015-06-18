@@ -1,6 +1,6 @@
 """RAML (REST API Markup Language) API wrapper."""
 
-__all__ = 'API Loader Converter RequestError ParameterError ApiError Content'.split()
+__all__ = 'API Loader Converter Content ApiError RequestError ParameterError AuthError'.split()
 
 from functools import wraps
 
