@@ -2,13 +2,15 @@
 
 [RAML (REST API Markup Language)](http://raml.org/) enhanced loader, parameter converter, and API wrapper.
 
-[![Latest Version](https://pypip.in/version/PyRAML/badge.svg)]
+[![Version](https://badge.fury.io/gh/salsita%2Fpyraml.svg)]
+(https://github.com/salsita/pyraml/tags)
+[![PyPI package](https://badge.fury.io/py/PyRAML.svg)]
 (https://pypi.python.org/pypi/PyRAML/)
-[![Downloads](https://pypip.in/download/PyRAML/badge.svg)]
+[![Downloads](https://img.shields.io/pypi/dm/PyRAML.svg)]
 (https://pypi.python.org/pypi/PyRAML/)
-[![Supported Python versions](https://pypip.in/py_versions/PyRAML/badge.svg)]
+[![Supported Python versions](https://img.shields.io/pypi/pyversions/PyRAML.svg)]
 (https://pypi.python.org/pypi/PyRAML/)
-[![License](https://pypip.in/license/PyRAML/badge.svg)]
+[![License](https://img.shields.io/pypi/l/PyRAML.svg)]
 (https://pypi.python.org/pypi/PyRAML/)
 
 
